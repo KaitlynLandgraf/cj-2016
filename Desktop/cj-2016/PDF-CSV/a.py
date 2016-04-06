@@ -23,67 +23,74 @@ for pdf_fname in pdf_filenames:
 
 import csv
 import pdfplumber
-pdf_fname12 = 'CAWARN-eddwarncn12.pdf'
 
-outfile = open('CAWARN12-one-page.csv', 'w')
+outfile = open('CAWARN12.csv', 'w')
 outcsv = csv.writer(outfile)
 
-pdf = pdfplumber.open(pdf_fname)
-page = pdf.pages[0]
-table = page.extract_table()
+pdf_fname12 = 'CAWARN-eddwarncn12.pdf'
 
-for row in table[1:]:
-    outcsv.writerow(row)
+pdf = pdfplumber.open(pdf_fname12)
+page = pdf.pages
+
+for page in pdf.pages:
+    table = page.extract_table()
+    for row in table[1:]:  
+        outcsv.writerow(row)
 outfile.close
+
+outfile = open('CAWARN13.csv', 'w')
+outcsv = csv.writer(outfile)
 
 pdf_fname13 = 'CAWARN-eddwarncn13.pdf'
 
-outfile = open('CAWARN13-one-page.csv', 'w')
-outcsv = csv.writer(outfile)
+pdf = pdfplumber.open(pdf_fname13)
+page = pdf.pages
 
-pdf = pdfplumber.open(pdf_fname)
-page = pdf.pages[0]
-table = page.extract_table()
-
-for row in table[1:]:
-    outcsv.writerow(row)
+for page in pdf.pages:
+    table = page.extract_table()
+    for row in table[1:]:  
+        outcsv.writerow(row)
 outfile.close
+
+outfile = open('CAWARN14.csv', 'w')
+outcsv = csv.writer(outfile)
 
 pdf_fname14 = 'CAWARN-eddwarncn14.pdf'
 
-outfile = open('CAWARN14-one-page.csv', 'w')
-outcsv = csv.writer(outfile)
+pdf = pdfplumber.open(pdf_fname14)
+page = pdf.pages
 
-pdf = pdfplumber.open(pdf_fname)
-page = pdf.pages[0]
-table = page.extract_table()
-
-for row in table[1:]:
-    outcsv.writerow(row)
+for page in pdf.pages:
+    table = page.extract_table()
+    for row in table[1:]:  
+        outcsv.writerow(row)
 outfile.close
+
+outfile = open('CAWARN1415.csv', 'w')
+outcsv = csv.writer(outfile)
 
 pdf_fname1415 = 'CAWARN-WARNReportfor7-1-2014to06-30-2015.pdf'
 
-outfile = open('CAWARN1415-one-page.csv', 'w')
-outcsv = csv.writer(outfile)
+pdf = pdfplumber.open(pdf_fname1415)
+page = pdf.pages
 
-pdf = pdfplumber.open(pdf_fname)
-page = pdf.pages[0]
-table = page.extract_table()
-
-for row in table[1:]:
-    outcsv.writerow(row)
+for page in pdf.pages:
+    table = page.extract_table()
+    for row in table[1:]:  
+        outcsv.writerow(row)
 outfile.close
 
-pdf_fname1516 = 'CAWARN-WARNReportfor7-1-2014to06-30-2015.pdf'
-
-outfile = open('CAWARN1516-one-page.csv', 'w')
+outfile = open('CAWARN1516.csv', 'w')
 outcsv = csv.writer(outfile)
 
-pdf = pdfplumber.open(pdf_fname)
-page = pdf.pages[0]
-table = page.extract_table()
+pdf_fname1516 = 'CAWARN-WARN-Report-for-7-1-2015-to-03-25-2016.pdf'
 
-for row in table[1:]:
-    outcsv.writerow(row)
+pdf = pdfplumber.open(pdf_fname1516)
+page = pdf.pages
+
+for page in pdf.pages:
+    table = page.extract_table()
+    for row in table[1:]:  
+        outcsv.writerow(row)
 outfile.close
+
